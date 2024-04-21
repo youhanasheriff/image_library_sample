@@ -1,0 +1,30 @@
+name: Flutter Web Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v1
+      with:
+        channel: 'stable'
+
+    - name: Install Make
+      run: sudo apt-get install make
+
+    - name: Run Make Deploy
+      run: make deploy OUTPUT=test
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build/web
