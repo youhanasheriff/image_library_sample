@@ -28,7 +28,7 @@ endif
 	git init && \
 	git add . && \
 	git commit -m "Deploy Version $(BUILD_VERSION)" && \
-	git branch -M main && \
+	git branch -M master && \
 	git remote add origin $(GITHUB_REPO) && \
 	git push -u -f origin master
 
