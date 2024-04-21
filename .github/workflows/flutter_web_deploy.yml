@@ -17,11 +17,10 @@ jobs:
       with:
         channel: 'stable'
 
-    - name: Install Make
-      run: sudo apt-get install make
-
-    - name: Run Make Deploy
-      run: make deploy OUTPUT=test
+    - name: Build Flutter Web
+      run: |
+        flutter pub get
+        flutter build web --release
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
