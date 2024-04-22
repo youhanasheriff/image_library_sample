@@ -143,14 +143,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// Create a Flutter application that displays a gallery of images:
-// - the images should be displayed as a square grid, the number of columns should depend on the screen width;
-// - the images should be loaded from Pixabay API;
-// - the number of likes and views should be displayed under each image;
-// - clicking on an image should open the image with an animation in full screen; when the image is full screen there should be a possibility to return to the original state;
-// - the application should be deployed on GitHub Pages;
-// - the application should be presented as a link/archive with the source code and a link to the application deployed in GitHub Pages.
-
 class ImageContainer extends StatelessWidget {
   final PixabayModel image;
   final double? width;
