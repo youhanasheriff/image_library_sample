@@ -161,7 +161,6 @@ class ImageContainer extends StatelessWidget {
       height: height ?? 0 + 24,
       child: InkWell(
         onTap: () {
-          //
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
